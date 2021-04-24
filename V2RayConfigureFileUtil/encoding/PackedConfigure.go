@@ -7,10 +7,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/golang/protobuf/proto"
+	"compress/gzip"
+
 	"golang.org/x/crypto/sha3"
+	"google.golang.org/protobuf/proto"
 )
-import "compress/gzip"
 
 func (e *Encoder) PackV2RayConfigureIntoPackedForm(FileName string) ([]byte, error) {
 
@@ -93,7 +94,7 @@ func (e *Encoder) UnpackV2RayConfB(payload []byte) (string, []byte, error) {
 	}
 	psum := sha3.Sum256(plctx)
 	if !bytes.Equal(PbRepre.CheckSum, psum[:]) {
-		return "", nil, errors.New("Checksum Mismatch")
+		return "", nil, errors.New("checksum mismatch")
 	}
 	var extension string
 	switch PbRepre.ConfigType {
@@ -115,6 +116,6 @@ func GuessConfigType(FileName string) (LibV2RayPackedConfig_LibV2RayConfigureTyp
 	} else if strings.HasSuffix(FileName, ".json") {
 		return LibV2RayPackedConfig_FullJsonFile, nil
 	} else {
-		return 0, errors.New("Cannot Guess Config Type")
+		return 0, errors.New("cannot guess config type")
 	}
 }

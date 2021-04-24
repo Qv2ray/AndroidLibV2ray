@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
-	"github.com/xiaokangwang/libV2RayAuxiliaryURL"
+	vlencoding "github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/encoding"
+	"github.com/xiaokangwang/AndroidLibV2Ray/libV2RayAuxiliaryURL"
 )
 
 var CurrentScan *QRScanContext

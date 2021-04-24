@@ -2,7 +2,6 @@ package libv2ray
 
 import (
 	"fmt"
-	"io"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,20 +10,19 @@ import (
 	"sync/atomic"
 	"time"
 
-	core "github.com/v2fly/v2ray-core"
-	"v2ray.com/ext/sysio"
+	core "github.com/v2fly/v2ray-core/v4"
+	v2rayconf "github.com/v2fly/v2ray-core/v4/infra/conf/serial"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/xiaokangwang/AndroidLibV2Ray/CoreI"
 	"github.com/xiaokangwang/AndroidLibV2Ray/Process"
 	"github.com/xiaokangwang/AndroidLibV2Ray/Process/Escort"
 	"github.com/xiaokangwang/AndroidLibV2Ray/Process/UpDownScript"
+	vlencoding "github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/encoding"
 	"github.com/xiaokangwang/AndroidLibV2Ray/VPN"
 	"github.com/xiaokangwang/AndroidLibV2Ray/configure"
 	"github.com/xiaokangwang/AndroidLibV2Ray/configure/jsonConvert"
 	"github.com/xiaokangwang/AndroidLibV2Ray/shippedBinarys"
-	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
-	mobasset "golang.org/x/mobile/asset"
+	"google.golang.org/protobuf/proto"
 )
 
 /*V2RayPoint V2Ray Point Server
@@ -287,18 +285,18 @@ func NewV2RayPoint() *V2RayPoint {
 	const assetperfix = "/dev/libv2rayfs0/asset"
 	os.Setenv("v2ray.location.asset", assetperfix)
 	//Now we handle read
-	sysio.NewFileReader = func(path string) (io.ReadCloser, error) {
-		if strings.HasPrefix(path, assetperfix) {
-			p := path[len(assetperfix)+1:]
-			//is it overridden?
-			by, ok := overridedAssets[p]
-			if ok {
-				return os.Open(by)
-			}
-			return mobasset.Open(p)
-		}
-		return os.Open(path)
-	}
+	// sysio.NewFileReader = func(path string) (io.ReadCloser, error) {
+	// 	if strings.HasPrefix(path, assetperfix) {
+	// 		p := path[len(assetperfix)+1:]
+	// 		//is it overridden?
+	// 		by, ok := overridedAssets[p]
+	// 		if ok {
+	// 			return os.Open(by)
+	// 		}
+	// 		return mobasset.Open(p)
+	// 	}
+	// 	return os.Open(path)
+	// }
 	//platform.ForceReevaluate()
 	//panic("Creating VPoint")
 	return &V2RayPoint{v2rayOP: new(sync.Mutex), status: &CoreI.Status{}, escorter: Escort.NewEscort(), VPNSupports: &VPN.VPNSupport{}, UpdownScripts: &UpDownScript.UpDownScript{}}

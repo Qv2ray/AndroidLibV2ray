@@ -9,9 +9,10 @@ import (
 	"github.com/xiaokangwang/AndroidLibV2Ray/Process/Escort"
 	"github.com/xiaokangwang/AndroidLibV2Ray/configure"
 	wavingocean "github.com/xiaokangwang/AndroidLibV2Ray/waVingOcean"
+	voconfigure "github.com/xiaokangwang/AndroidLibV2Ray/waVingOcean/configure"
 
-	core "github.com/v2fly/v2ray-core"
-	"github.com/v2fly/v2ray-core/transport/internet"
+	core "github.com/v2fly/v2ray-core/v4"
+	"github.com/v2fly/v2ray-core/v4/transport/internet"
 	"golang.org/x/sys/unix"
 )
 

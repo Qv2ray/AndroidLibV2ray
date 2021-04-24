@@ -4,7 +4,7 @@ shippedBinaryDep:
 		go get -u github.com/jteeuwen/go-bindata/...
 
 shippedBinary.%:
-	go-bindata -nometadata -nomemcopy -pkg shippedBinarys -o ./binary_$*.go -tags $* ArchIndep/ ArchDep/$*/
+	go-bindata -nomemcopy -pkg shippedBinarys -o ./binary_$*.go -tags $* ArchIndep/ ArchDep/$*/
 
 shippedBinary:shippedBinaryDep  $(Platdep)
 	@echo "Done"

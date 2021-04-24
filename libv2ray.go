@@ -1,13 +1,11 @@
 package libv2ray
 
-//go:generate make all
-
 import (
 	"fmt"
 
 	"github.com/xiaokangwang/AndroidLibV2Ray/CoreI"
 
-	core "github.com/v2fly/v2ray-core"
+	core "github.com/v2fly/v2ray-core/v4"
 )
 
 /*CheckVersion int

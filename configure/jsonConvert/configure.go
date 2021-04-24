@@ -1,10 +1,8 @@
 package jsonConvert
 
 import (
-	"bytes"
 	"encoding/json"
 	"errors"
-	"io"
 	"io/ioutil"
 	"strings"
 
@@ -45,7 +43,7 @@ type JsonToPbConverter struct {
 }
 
 func (v *JsonToPbConverter) parseConf() error {
-	jsoncf, err := simplejson.NewFromReader(v.StripComment(v.reading))
+	jsoncf, err := simplejson.NewFromReader(strings.NewReader(v.reading))
 	if err != nil {
 		//v.Callbacks.OnEmitStatus(-2, err.Error())
 		return err
@@ -151,14 +149,6 @@ func jsonStringDefault(jsons *simplejson.Json, def string) string {
 		return def
 	}
 	return s
-}
-
-func (v *JsonToPbConverter) StripComment(Content string) io.Reader {
-	Configure := strings.NewReader(Content)
-	v2rayJsonWithComment := &v2rayJsonWithComment.Reader{Reader: Configure}
-	var stp bytes.Buffer
-	io.Copy(&stp, v2rayJsonWithComment)
-	return &stp
 }
 
 func (v *JsonToPbConverter) LoadFromString(ctx string) {

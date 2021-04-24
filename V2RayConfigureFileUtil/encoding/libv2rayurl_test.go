@@ -5,7 +5,7 @@ import (
 	"crypto/rand"
 	"testing"
 
-	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
+	vlencoding "github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/encoding"
 )
 
 func TestLibV2RayURL(t *testing.T) {

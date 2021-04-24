@@ -11,8 +11,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/xiaokangwang/V2RayConfigureFileUtil/Convert"
-	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
+	"github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/Convert"
+	vlencoding "github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/encoding"
 
 	"github.com/boombuler/barcode"
 	"github.com/boombuler/barcode/aztec"

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
+	vlencoding "github.com/xiaokangwang/AndroidLibV2Ray/V2RayConfigureFileUtil/encoding"
 )
 
 func TestSeedRand2(t *testing.T) {

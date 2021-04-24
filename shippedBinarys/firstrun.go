@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/andboson/ab-go/bindata"
 	"github.com/xiaokangwang/AndroidLibV2Ray/CoreI"
 )
 
@@ -25,7 +26,7 @@ func (v *FirstRun) checkIfRcExist() error {
 		return err
 	}
 	for _, fn := range IndepDir {
-		err := RestoreAsset(datadir, "ArchIndep/"+fn)
+		err := bindata.RestoreAsset(datadir, "ArchIndep/"+fn)
 		//GrantPremission
 		os.Chmod(datadir+"ArchIndep/"+fn, 0700)
 		fmt.Println(os.Symlink(datadir+"ArchIndep/"+fn, datadir+fn))
@@ -41,7 +42,7 @@ func (v *FirstRun) checkIfRcExist() error {
 			return err
 		}
 		for _, FND := range DepDir2 {
-			RestoreAsset(datadir, "ArchDep/"+fn+"/"+FND)
+			bindata.RestoreAsset(datadir, "ArchDep/"+fn+"/"+FND)
 			os.Chmod(datadir+"ArchDep/"+fn+"/"+FND, 0700)
 			os.Symlink(datadir+"ArchDep/"+fn+"/"+FND, datadir+FND)
 		}
