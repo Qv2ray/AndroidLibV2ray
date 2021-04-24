@@ -1,3 +1,5 @@
+.vscode/
+.idea/
 gradle/build.gradle
 
 *.pb.go
