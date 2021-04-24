@@ -11,7 +11,7 @@ import (
 	"log"
 
 	simplejson "github.com/bitly/go-simplejson"
-	"github.com/xiaokangwang/AndroidLibV2ray/configure"
+	"github.com/xiaokangwang/AndroidLibV2Ray/configure"
 )
 
 type libv2rayconf struct {

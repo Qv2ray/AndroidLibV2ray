@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package kkdev.v2ray.ConfigureEncoding;
+option go_package = "encoding";
+
+message LibV2RayQRCode {
+  //Declare QRCodeType
+  string Type = 1;
+  bytes MsgChecksum = 2; //Always use SHA3-256
+
+  //If there is too much data to be encoded in one QR code
+  //We can let user can scan mutiply QR codes and construct.
+  enum MessageSegmentionType{
+    NoSegmention = 0;
+    Reconstruct = 1;
+  }
+  MessageSegmentionType MessageSegType = 3;
+  int32 GroupCount = 4;
+  int32 MessgaeNumber = 5;
+  bytes Payload = 6;
+  //int32 ReconstructPadTo = 7;
+  bytes PayloadChecksum = 8; //Always use SHA3-256
+  int32 OriginalSegmentNum = 9;
+  int32 payloadTotalSize =10;
+}

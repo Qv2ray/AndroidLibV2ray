@@ -9,14 +9,14 @@ addons:
   apt:
     update: true
 before_script:
-- sudo ntpdate -u time.google.com
-- date
-- make all
-- make downloadGoMobile
-- make buildVGO
+  - sudo ntpdate -u time.google.com
+  - date
+  - make all
+  - make downloadGoMobile
+  - make buildVGO
 script:
-- go test -p 1 -tags json -v github.com/xiaokangwang/AndroidLibV2ray/...
-- make BuildMobile
+  - go test -p 1 -tags json -v github.com/xiaokangwang/AndroidLibV2Ray/...
+  - make BuildMobile
 after_success:
 deploy:
   provider: releases

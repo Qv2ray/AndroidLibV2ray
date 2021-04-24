@@ -1,9 +1,11 @@
 pb: cleanpb
 	@echo "pb Start"
 	bash -c "protoc -I$$(pwd)/configure --go_out=. $$(pwd)/configure/*.proto"
+	bash -c "protoc -I$$(pwd)/waVingOcean/configure --go_out=. $$(pwd)/waVingOcean/configure/*.proto"
 
 cleanpb:
 	-rm ./configure/*.pb.go
+	-rm ./waVingOcean/configure/*.pb.go
 
 asset:
 	mkdir assets
@@ -12,16 +14,6 @@ asset:
 
 shippedBinary:
 	cd shippedBinarys; $(MAKE) shippedBinary
-
-fetchDep:
-	-go get  github.com/xiaokangwang/V2RayConfigureFileUtil
-	-cd $(GOPATH)/src/github.com/xiaokangwang/V2RayConfigureFileUtil;$(MAKE) all
-	go get  github.com/xiaokangwang/V2RayConfigureFileUtil
-	-go get  github.com/xiaokangwang/AndroidLibV2ray
-	-cd $(GOPATH)/src/github.com/xiaokangwang/libV2RayAuxiliaryURL; $(MAKE) all
-	-go get  github.com/xiaokangwang/AndroidLibV2ray
-	-cd $(GOPATH)/src/github.com/xiaokangwang/waVingOcean/configure; $(MAKE) pb
-	go get github.com/xiaokangwang/AndroidLibV2ray
 
 ANDROID_HOME=$(HOME)/android-sdk-linux
 export ANDROID_HOME
@@ -47,5 +39,5 @@ buildVGO:
 BuildMobile:
 	@echo Stub
 
-all: asset pb shippedBinary fetchDep
+all: asset pb shippedBinary
 	@echo DONE

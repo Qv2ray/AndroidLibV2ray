@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package kkdev.v2ray.ConfigureEncoding;
+option go_package = "encoding";
+
+
+message LibV2RayPackedConfig {
+
+  enum LibV2RayConfigureType{
+    Invaild = 0;
+    FullJsonFile = 1;
+    FullProto = 2;
+    LibV2RaySimpleProtoV1 = 3;
+  }
+  LibV2RayConfigureType ConfigType = 1;
+  bytes CheckSum = 2; //Always use SHA3-256
+  bytes Payload = 3;
+  bool GzipCompressed = 4;
+}

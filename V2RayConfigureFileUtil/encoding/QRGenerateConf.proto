@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package kkdev.v2ray.ConfigureEncoding;
+option go_package = "encoding";
+
+message QRGenConf{
+  int32 MaxQrSize = 1;
+  bool forceReconstruct = 2;
+  message ReconstructConf{
+    int32 AtLeastReplacement = 1;
+    double AtLeastMutiply = 2;
+
+  }
+  ReconstructConf ReconsConf = 3;
+
+}

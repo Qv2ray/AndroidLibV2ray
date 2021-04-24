@@ -7,7 +7,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/xiaokangwang/AndroidLibV2ray/CoreI"
+	"github.com/xiaokangwang/AndroidLibV2Ray/CoreI"
 )
 
 func NewLib2rayContext() *V2RayContext {

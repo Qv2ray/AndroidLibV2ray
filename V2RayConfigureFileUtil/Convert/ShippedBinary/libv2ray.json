@@ -1,0 +1,33 @@
+{
+    "enabled": true,
+    "env": [
+      "V2RaySocksPort=10808"
+    ],
+    "escort": [],
+    "listener": {
+      "onDown": "#none",
+      "onUp": "#none"
+    },
+    "render": [],
+    "vpnservice": {
+      "Args": [
+        "--netif-ipaddr",
+        "26.26.26.2",
+        "--netif-netmask",
+        "255.255.255.0",
+        "--socks-server-addr",
+        "127.0.0.1:$V2RaySocksPort",
+        "--tunfd",
+        "3",
+        "--tunmtu",
+        "1500",
+        "--sock-path",
+        "/dev/null",
+        "--loglevel",
+        "4",
+        "--enable-udprelay"
+      ],
+      "Target": "${datadir}tun2socks",
+      "VPNSetupArg": "m,1500 a,26.26.26.1,24 r,0.0.0.0,0 d,208.67.222.222"
+    }
+  }

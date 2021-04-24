@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/xiaokangwang/AndroidLibV2ray/configure"
+	"github.com/xiaokangwang/AndroidLibV2Ray/configure"
 )
 
 func ConvertToPb(leagcy libv2rayconf) *configure.LibV2RayConf {

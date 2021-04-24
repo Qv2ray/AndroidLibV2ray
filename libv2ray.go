@@ -5,7 +5,7 @@ package libv2ray
 import (
 	"fmt"
 
-	"github.com/xiaokangwang/AndroidLibV2ray/CoreI"
+	"github.com/xiaokangwang/AndroidLibV2Ray/CoreI"
 
 	core "github.com/v2fly/v2ray-core"
 )
