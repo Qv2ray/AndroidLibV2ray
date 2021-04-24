@@ -8,13 +8,10 @@ import (
 	"github.com/xiaokangwang/AndroidLibV2ray/CoreI"
 	"github.com/xiaokangwang/AndroidLibV2ray/Process/Escort"
 	"github.com/xiaokangwang/AndroidLibV2ray/configure"
-	"github.com/xiaokangwang/waVingOcean"
-	voconfigure "github.com/xiaokangwang/waVingOcean/configure"
 
+	core "github.com/v2fly/v2ray-core"
+	"github.com/v2fly/v2ray-core/transport/internet"
 	"golang.org/x/sys/unix"
-
-	"v2ray.com/core"
-	"v2ray.com/core/transport/internet"
 )
 
 /*VpnSupportReady VpnSupportReady*/

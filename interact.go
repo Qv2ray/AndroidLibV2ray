@@ -11,8 +11,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"v2ray.com/core"
-	"v2ray.com/ext/sysio"
+	core "github.com/v2fly/v2ray-core"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/xiaokangwang/AndroidLibV2ray/CoreI"
@@ -25,7 +24,6 @@ import (
 	"github.com/xiaokangwang/AndroidLibV2ray/shippedBinarys"
 	vlencoding "github.com/xiaokangwang/V2RayConfigureFileUtil/encoding"
 	mobasset "golang.org/x/mobile/asset"
-	v2rayconf "v2ray.com/ext/tools/conf/serial"
 )
 
 /*V2RayPoint V2Ray Point Server

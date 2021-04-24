@@ -6,8 +6,8 @@ import (
 	"net"
 	"strconv"
 
-	"v2ray.com/core"
-	v2net "v2ray.com/core/common/net"
+	core "github.com/v2fly/v2ray-core"
+	v2net "github.com/v2fly/v2ray-core/common/net"
 )
 
 type V2Dialer struct {

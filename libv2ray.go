@@ -7,8 +7,7 @@ import (
 
 	"github.com/xiaokangwang/AndroidLibV2ray/CoreI"
 
-	"v2ray.com/core"
-	_ "v2ray.com/core/main/distro/all"
+	core "github.com/v2fly/v2ray-core"
 )
 
 /*CheckVersion int

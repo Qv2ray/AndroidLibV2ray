@@ -1,7 +1,7 @@
 package CoreI
 
 import (
-	"v2ray.com/core"
+	core "github.com/v2fly/v2ray-core"
 )
 
 type Status struct {

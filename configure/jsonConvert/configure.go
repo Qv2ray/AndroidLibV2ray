@@ -12,7 +12,6 @@ import (
 
 	simplejson "github.com/bitly/go-simplejson"
 	"github.com/xiaokangwang/AndroidLibV2ray/configure"
-	v2rayJsonWithComment "v2ray.com/ext/encoding/json"
 )
 
 type libv2rayconf struct {
@@ -36,6 +35,7 @@ type libv2rayconfRenderCfgTarget struct {
 	Args   []string `json:"Args"`
 	Source string   `json:"Source"`
 }
+
 type JsonToPbConverter struct {
 	conf    *libv2rayconf
 	reading string

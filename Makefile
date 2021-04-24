@@ -1,7 +1,10 @@
-pb:
-	  go get -u github.com/golang/protobuf/protoc-gen-go
-		@echo "pb Start"
-		cd configure && make pb
+pb: cleanpb
+	@echo "pb Start"
+	bash -c "protoc -I$$(pwd)/configure --go_out=. $$(pwd)/configure/*.proto"
+
+cleanpb:
+	-rm ./configure/*.pb.go
+
 asset:
 	mkdir assets
 	cd assets;curl https://cdn.rawgit.com/v2ray/v2ray-core/e60de73c704d46d91633035e6b06184f7186a4e0/tools/release/config/geosite.dat > geosite.dat
