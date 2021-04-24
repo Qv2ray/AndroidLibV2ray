@@ -24,10 +24,7 @@ const configureFile = "ConfigureFile"
 
 func (vc *V2RayContext) CheckConfigureFile() bool {
 	//Check if file exist
-	if !exists(vc.configureFile) {
-		return false
-	}
-	return true
+	return exists(vc.configureFile)
 }
 
 func (vc *V2RayContext) SetPackageName(PackageName string) {

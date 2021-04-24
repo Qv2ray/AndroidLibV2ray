@@ -13,11 +13,11 @@ require (
 	github.com/klauspost/reedsolomon v1.9.12
 	github.com/kr/pretty v0.2.1 // indirect
 	github.com/ld9999999999/go-interfacetools v0.0.0-20151014172923-5c708af5db62
+	github.com/miekg/dns v1.1.41
 	github.com/nahanni/go-ucl v0.0.0-20161122070711-3788fcf0dad8
 	github.com/v2fly/v2ray-core/v4 v4.38.1-0.20210422001252-a21e4a7deb2d
-	github.com/yinghuocho/gosocks v0.0.0-20170529191022-fe2a2c4caed2 // indirect
-	github.com/yinghuocho/gotun2socks v0.0.0-20161222053559-6fb6714efcf0
 	golang.org/x/crypto v0.0.0-20210415154028-4f45737414dc
+	golang.org/x/mobile v0.0.0-20210220033013-bdb1ca9a1e08 // indirect
 	golang.org/x/sys v0.0.0-20210423185535-09eb48e85fd7
 	google.golang.org/protobuf v1.26.0
 )
